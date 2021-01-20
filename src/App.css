@@ -1,0 +1,194 @@
+/* General */
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+body {
+  background-color: gray;
+  display: flex;
+  font-family: Arial, sans-serif; 
+  justify-content: center;
+}
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Main Content */
+
+.main-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* -Drum Machine */
+
+#drum-machine {
+  align-items: center;
+  background-color: white;
+  border: 5px solid black;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  overflow: auto;
+  padding: 15px;
+  width: 400px;
+}
+
+/* --Drum Pads */
+
+.drum-pads {
+  display: grid;
+  grid-template-columns: repeat(3,65px);
+  grid-template-rows: repeat(3,65px);
+  margin-bottom: 20px;
+}
+.drum-pad {
+  background-color: lightgray;
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px;
+  cursor: pointer;
+  font-weight: bold;
+  height: 50px;
+  margin: 5px;
+  text-align: center;
+  width: 50px;
+}
+
+
+/* --Controls Area */
+
+#power-box {
+  background-color: turquoise;
+  border: 2px solid black;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: 3px;
+  padding: 5px;
+  text-align: center;
+  width: 80px;
+}
+#power-button {
+  border-radius: 100%;
+  box-shadow: 2px 2px 2px;
+  cursor: pointer;
+  height: 25px;
+  margin-top: 0;
+  width: 25px;
+}
+
+#sound-display {
+  background-color: lightgray;
+  box-shadow: 2px 2px inset, -2px -2px inset;
+  line-height: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  min-height: 50px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* ---Volume */
+
+#volume {
+  font-weight: bold;
+  margin-left: 10px; 
+}
+
+#volume-bar {
+  -webkit-appearance: none; 
+  background-color: #2866FF;
+  margin-top: 10px;
+}
+#volume-bar:focus {
+  outline: none;
+}
+
+#volume-bar::-moz-range-track {
+  background-color: transparent;
+}
+#volume-bar::-ms-track  {
+  background-color: transparent;
+}
+
+#volume-bar::-moz-range-thumb {
+  background: lightgray;
+  border: 1px solid black;
+  border-radius: 3px;
+  cursor: grab;
+  height: 20px;
+  width: 20px; 
+}
+#volume-bar::-ms-thumb {
+  background: lightgray;
+  border: 1px solid black;
+  border-radius: 3px;
+  cursor: grab;
+  height: 20px;
+  width: 20px; 
+}
+#volume-bar::-webkit-slider-thumb  {
+  -webkit-appearance: none; 
+  appearance: none;
+  background: lightgray;
+  border: 1px solid black;
+  border-radius: 3px;
+  cursor: grab;
+  height: 20px;
+  width: 20px; 
+}
+
+#volume-bar::-moz-range-thumb:active {
+  cursor: grabbing;
+}
+#volume-bar::-ms-thumb:active {
+  cursor: grabbing;
+}
+#volume-bar::-webkit-slider-thumb:active {
+  cursor: grabbing;
+}
+
+.speaker {
+  height: 20px;
+  vertical-align: middle;
+  width: 20px;
+}
+.volume-container {
+  align-items: center;
+  display: flex;
+}
+
+/* ---Status Classes */
+
+.active {
+  background-color: green;
+}
+.clicked {
+  transform: translateY(2px);
+}
+.disabled {
+  opacity: .5;
+}
+.inactive {
+  background-color: red;
+}
+.padPressed {
+  box-shadow: 2px 2px 6px #2866FF;
+  transform: translateY(5px);
+}
+
+@media only screen and (min-width: 400px) {
+  #drum-machine {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .drum-pads {
+    margin-bottom: 0;
+  }
+}
